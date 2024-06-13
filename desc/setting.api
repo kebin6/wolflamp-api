@@ -1,0 +1,77 @@
+syntax = "v1"
+
+import "base.api"
+type (
+    // GameRuleInfo
+    GameRuleInfo {
+        // Title
+        Title string `json:"title"`
+        // Content
+        Content string `json:"content"`
+    }
+
+    // RobotNumInfo
+    RobotNumInfo {
+        // Min
+        Min int64 `json:"min"`
+        // Max
+        Max int64 `json:"max"`
+    }
+
+    // RobotLampNumInfo
+    RobotLampNumInfo {
+        // Min
+        Min int64 `json:"min"`
+        // Max
+        Max int64 `json:"max"`
+    }
+
+    // SettingInfo
+    SettingInfo {
+        // GameRuleInfo | 游戏规则
+        GameRule GameRuleInfo `json:"gameRule"`
+        // RobotNumInfo | 机器人数量
+        RobotNum RobotNumInfo `json:"robotNum"`
+        // RobotLampNumInfo | 机器人投入羊数量
+        RobotLampNum RobotLampNumInfo `json:"robotLampNum"`
+        // WithdrawCommission | 提现手续费
+        WithdrawCommission float32 `json:"withdrawCommission"`
+        // MinWithdrawNum | 最小提现数量
+        MinWithdrawNum uint32 `json:"minWithdrawNum"`
+        // IdleTime | 机器人空闲秒数
+        IdleTime uint32 `json:"idleTime"`
+    }
+
+    // FindSettingReq 
+    FindSettingReq {
+        Module string `json:"module"`
+    }
+
+    // FindSettingResp
+    FindSettingResp {
+        BaseMsgResp
+        // Data
+        Data  SettingInfo `json:"data"`
+    }
+
+    // UpdateSettingReq
+    UpdateSettingReq {
+        SettingInfo
+    }
+)
+
+@server(
+    group: setting
+)
+
+service Wolflamp {
+
+    // update
+    @handler updateSetting
+    post /setting/update (UpdateSettingReq) returns (BaseMsgResp)
+
+    // find
+    @handler findSetting
+    post /setting/find (FindSettingReq) returns (FindSettingResp)
+
+}

@@ -1,0 +1,35 @@
+syntax = "v1"
+
+import "base.api"
+type (
+    // FindNoticeReq
+    FindNoticeReq {
+        Module string `json:"module"`
+    }
+
+        // FindNoticeResp
+    FindNoticeResp {
+        BaseDataInfo
+    }
+
+        // UpdateNoticeReq
+    UpdateNoticeReq {
+        Notice string `json:"notice"`
+    }
+)
+
+@server(
+    group: notice
+)
+
+service Wolflamp {
+
+    // update
+    @handler updateNotice
+    post /notice/update (UpdateNoticeReq) returns (BaseMsgResp)
+
+    // find
+    @handler findNotice
+    post /notice/find (FindNoticeReq) returns (FindNoticeResp)
+
+}

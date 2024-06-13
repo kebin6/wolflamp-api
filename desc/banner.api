@@ -1,0 +1,181 @@
+syntax = "v1"
+
+import "base.api"
+
+type (
+    // BannerInfo 
+    BannerInfo {
+        // Id
+        Id  uint64 `json:"id"`
+
+        // CreatedAt
+        CreatedAt  int64 `json:"createdAt"`
+
+        // UpdatedAt
+        UpdatedAt  int64 `json:"updatedAt"`
+
+        // Status
+        Status  uint32 `json:"status"`
+
+        // Endpoint
+        Endpoint  string `json:"endpoint"`
+
+        // Module
+        Module  string `json:"module"`
+
+        // FileType
+        FileType  uint32 `json:"fileType"`
+
+        // Path
+        Path  string `json:"path"`
+
+        // JumpUrl
+        JumpUrl  string `json:"jumpUrl"`
+
+        File  *FileInfo `json:"file"`
+    }
+
+    // CreateBannerReq 
+    CreateBannerReq {
+        // Status
+        Status  uint32 `json:"status"`
+
+        // Endpoint
+        Endpoint  string `json:"endpoint"`
+
+        // Module
+        Module  string `json:"module"`
+
+        // FileType
+        FileType  uint32 `json:"fileType"`
+
+        // Path
+        Path  string `json:"path"`
+
+        // JumpUrl
+        JumpUrl  string `json:"jumpUrl"`
+
+        // FileId
+        FileId string `json:"fileId"`
+    }
+
+    // UpdateBannerReq 
+    UpdateBannerReq {
+        // Id
+        Id  uint64 `json:"id"`
+
+        // Status
+        Status  *uint32 `json:"status,optional"`
+
+        // Endpoint
+        Endpoint  *string `json:"endpoint,optional"`
+
+        // Module
+        Module  *string `json:"module,optional"`
+
+        // FileType
+        FileType  *uint32 `json:"fileType,optional"`
+
+        // Path
+        Path  *string `json:"path,optional"`
+
+        // JumpUrl
+        JumpUrl  *string `json:"jumpUrl,optional"`
+
+        // FileId
+        FileId  *string `json:"fileId,optional"`
+    }
+
+    // DeleteBannerReq 
+    DeleteBannerReq {
+        // Id
+        Id  uint64 `json:"id"`
+
+    }
+
+    // FindBannerReq 
+    FindBannerReq {
+        // Id
+        Id  uint64 `json:"id"`
+
+    }
+
+    FindBannerResp {
+        BaseMsgResp
+        // Data
+        Data  BannerInfo `json:"data"`
+    }
+
+    // ListBannerReq 
+    ListBannerReq {
+        // Page
+        Page  uint64 `json:"page"`
+
+        // PageSize
+        PageSize  uint64 `json:"pageSize"`
+
+        // Status
+        Status  *uint32 `json:"status,optional"`
+
+        // Endpoint
+        Endpoint  *string `json:"endpoint,optional"`
+
+        // Module
+        Module  *string `json:"module,optional"`
+
+        // FileType
+        FileType  *uint32 `json:"fileType,optional"`
+
+        // Path
+        Path  *string `json:"path,optional"`
+
+        // JumpUrl
+        JumpUrl  *string `json:"jumpUrl,optional"`
+
+    }
+
+    // ListBannerResp 
+    ListBannerResp {
+        BaseDataInfo
+
+        // Data
+        Data  ListBannerInfo `json:"data"`
+
+    }
+
+    ListBannerInfo {
+        BaseListInfo
+
+        Data  []BannerInfo  `json:"data"`
+    }
+
+
+)
+
+@server(
+    group: banner
+)
+
+service Wolflamp {
+    // createBanner
+    @handler createBanner
+    post /banner/create (CreateBannerReq) returns (BaseMsgResp)
+
+    // updateBanner
+    @handler updateBanner
+    post /banner/update (UpdateBannerReq) returns (BaseMsgResp)
+
+    // deleteBanner
+    @handler deleteBanner
+    post /banner/delete (DeleteBannerReq) returns (BaseMsgResp)
+
+    // findBanner
+    @handler findBanner
+    post /banner/find (FindBannerReq) returns (FindBannerResp)
+
+    // listBanner
+    @handler listBanner
+    post /banner/list (ListBannerReq) returns (ListBannerResp)
+
+
+}

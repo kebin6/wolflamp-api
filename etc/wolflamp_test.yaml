@@ -1,0 +1,54 @@
+Name: Wolflamp.api
+Host: 0.0.0.0
+Port: 8002
+Timeout: 2000
+
+Auth:
+  AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2
+  AccessExpire: 259200
+
+CROSConf:
+  Address: '*'
+
+Log:
+  ServiceName: WolflampApiLogger
+  Mode: file
+  Path: /home/data/logs
+  Level: info
+  Compress: false
+  KeepDays: 7
+  StackCoolDownMillis: 100
+
+RedisConf:
+  Db: 0
+  Host: redis:6379
+  Pass: ewYGaN@9uXKP
+
+CasbinDatabaseConf:
+  Type: mysql
+  Host: mysql
+  Port: 3306
+  DBName: solamb
+  Username: solamb
+  Password: 8KbDVUAr5J#b
+  MaxOpenConn: 100
+  SSLMode: disable
+  CacheTime: 5
+
+CasbinConf:
+  ModelText: |
+    [request_definition]
+    r = sub, obj, act
+    [policy_definition]
+    p = sub, obj, act
+    [role_definition]
+    g = _, _
+    [policy_effect]
+    e = some(where (p.eft == allow))
+    [matchers]
+    m = r.sub == p.sub && keyMatch2(r.obj,p.obj) && r.act == p.act
+
+WolfLampRpc:
+  Endpoints:
+    - solamb-rpc:7002
+  Enabled: true

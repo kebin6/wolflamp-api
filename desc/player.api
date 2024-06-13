@@ -1,0 +1,209 @@
+syntax = "v1"
+
+import "base.api"
+
+type (
+    // PlayerInfo 
+    PlayerInfo {
+        // Id
+        Id  uint64 `json:"id"`
+
+        // CreatedAt
+        CreatedAt  int64 `json:"createdAt"`
+
+        // UpdatedAt
+        UpdatedAt  int64 `json:"updatedAt"`
+
+        // Status
+        Status  uint32 `json:"status"`
+
+        // Name
+        Name  string `json:"name"`
+
+        // Rank
+        Rank  uint32 `json:"rank"`
+
+        // Amount
+        Amount  float64 `json:"amount"`
+
+        // InvitedNum
+        InvitedNum  uint32 `json:"invitedNum"`
+
+        // TotalIncome
+        TotalIncome  float64 `json:"totalIncome"`
+
+        // ProfitAndLoss
+        ProfitAndLoss  float32 `json:"profitAndLoss"`
+
+        // Recent100WinPercent
+        Recent100WinPercent  float32 `json:"recent100WinPercent"`
+
+        // InviteCode
+        InviteCode  string `json:"inviteCode"`
+
+        // InviterId
+        InviterId  uint64 `json:"inviterId"`
+
+        // InvitedCode
+        InvitedCode  string `json:"invitedCode"`
+    }
+
+    // CreatePlayerReq 
+    CreatePlayerReq {
+        // Status
+        Status  uint32 `json:"status"`
+
+        // Name
+        Name  string `json:"name"`
+
+        // Rank
+        Rank  uint32 `json:"rank"`
+
+        // Amount
+        Amount  float64 `json:"amount"`
+
+        // InvitedNum
+        InvitedNum  uint32 `json:"invitedNum"`
+
+        // TotalIncome
+        TotalIncome  float64 `json:"totalIncome"`
+
+        // ProfitAndLoss
+        ProfitAndLoss  float32 `json:"profitAndLoss"`
+
+        // Recent100WinPercent
+        Recent100WinPercent  float32 `json:"recent100WinPercent"`
+
+        // InvitedCode
+        InvitedCode  string `json:"invitedCode"`
+    }
+
+    // UpdatePlayerReq 
+    UpdatePlayerReq {
+        // Id
+        Id  uint64 `json:"id"`
+
+        // Status
+        Status  *uint32 `json:"status,optional"`
+
+        // Name
+        Name  *string `json:"name,optional"`
+
+        // Rank
+        Rank  *uint32 `json:"rank,optional"`
+
+        // Amount
+        Amount  *float64 `json:"amount,optional"`
+
+        // InvitedNum
+        InvitedNum  *uint32 `json:"invitedNum,optional"`
+
+        // TotalIncome
+        TotalIncome  *float64 `json:"totalIncome,optional"`
+
+        // ProfitAndLoss
+        ProfitAndLoss  *float32 `json:"profitAndLoss,optional"`
+
+        // Recent100WinPercent
+        Recent100WinPercent  *float32 `json:"recent100WinPercent,optional"`
+    }
+
+    // DeletePlayerReq 
+    DeletePlayerReq {
+        // Id
+        Id  uint64 `json:"id"`
+    }
+
+    // FindPlayerReq 
+    FindPlayerReq {
+        // Id
+        Id  uint64 `json:"id"`
+    }
+
+    FindPlayerResp {
+        BaseMsgResp
+        // Data
+        Data  PlayerInfo `json:"data"`
+    }
+
+    // ListPlayerReq 
+    ListPlayerReq {
+        // Page
+        Page  uint64 `json:"page"`
+
+        // PageSize
+        PageSize  uint64 `json:"pageSize"`
+
+        // Status
+        Status  *uint32 `json:"status,optional"`
+
+        // Name
+        Name  *string `json:"name,optional"`
+
+        // Rank
+        Rank  *uint32 `json:"rank,optional"`
+
+        // Amount
+        Amount  *float64 `json:"amount,optional"`
+
+        // InvitedNum
+        InvitedNum  *uint32 `json:"invitedNum,optional"`
+
+        // TotalIncome
+        TotalIncome  *float64 `json:"totalIncome,optional"`
+
+        // ProfitAndLoss
+        ProfitAndLoss  *float32 `json:"profitAndLoss,optional"`
+
+        // Recent100WinPercent
+        Recent100WinPercent  *float32 `json:"recent100WinPercent,optional"`
+
+        // InviteCode
+        InviteCode  *string `json:"inviteCode,optional"`
+
+        // InvitedCode
+        InvitedCode  *string `json:"invitedCode,optional"`
+    }
+
+    // ListBannerResp
+    ListPlayerResp {
+        BaseDataInfo
+
+        // Data
+        Data  ListPlayerInfo `json:"data"`
+
+    }
+
+    ListPlayerInfo {
+        BaseListInfo
+
+        Data  []PlayerInfo  `json:"data"`
+    }
+
+)
+
+@server(
+    group: player
+)
+
+service Wolflamp {
+    // create
+    @handler createPlayer
+    post /player/create (CreatePlayerReq) returns (BaseMsgResp)
+
+    // update
+    @handler updatePlayer
+    post /player/update (UpdatePlayerReq) returns (BaseMsgResp)
+
+    // delete
+    @handler deletePlayer
+    post /player/delete (DeletePlayerReq) returns (BaseMsgResp)
+
+    // find
+    @handler findPlayer
+    post /player/find (FindPlayerReq) returns (FindPlayerResp)
+
+    // list
+    @handler listPlayer
+    post /player/list (ListPlayerReq) returns (ListPlayerResp)
+}

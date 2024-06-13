@@ -1,0 +1,170 @@
+syntax = "v1"
+
+import "base.api"
+type (
+    // OrderInfo 
+    OrderInfo {
+        // Id
+        Id  uint64 `json:"id"`
+
+        // CreatedAt
+        CreatedAt  int64 `json:"createdAt"`
+
+        // UpdatedAt
+        UpdatedAt  int64 `json:"updatedAt"`
+
+        // Status
+        Status  uint32 `json:"status"`
+
+        // Type
+        Type  string `json:"type"`
+
+        // Code
+        Code  string `json:"code"`
+
+        // Num
+        Num  float64 `json:"num"`
+
+        // ToAddress
+        ToAddress  string `json:"toAddress"`
+
+        // FromAddress
+        FromAddress  string `json:"fromAddress"`
+
+        // TransactionId
+        TransactionId  string `json:"transactionId"`
+    }
+
+    // CreateOrderReq 
+    CreateOrderReq {
+        // Status
+        Status  uint32 `json:"status"`
+
+        // Num
+        Num  float64 `json:"num"`
+
+        // Type
+        Type  string `json:"type"`
+
+        // ToAddress
+        ToAddress  string `json:"toAddress"`
+
+        // FromAddress
+        FromAddress  string `json:"fromAddress"`
+
+    }
+
+    // UpdateOrderReq 
+    UpdateOrderReq {
+        // Id
+        Id  uint64 `json:"id"`
+
+        // Status
+        Status  *uint32 `json:"status,optional"`
+
+        // Num
+        Num  *float64 `json:"num,optional"`
+
+        // ToAddress
+        ToAddress  *string `json:"toAddress,optional"`
+
+        // FromAddress
+        FromAddress  *string `json:"fromAddress,optional"`
+
+        // TransactionId
+        TransactionId  *string `json:"transactionId,optional"`
+    }
+
+    // DeleteOrderReq 
+    DeleteOrderReq {
+        // Id
+        Id  uint64 `json:"id"`
+
+    }
+
+    // FindOrderReq 
+    FindOrderReq {
+        // Id
+        Id  uint64 `json:"id"`
+
+    }
+
+    FindOrderResp {
+        BaseDataInfo
+        // Data
+        Data  OrderInfo `json:"data"`
+    }
+
+
+        // ListOrderReq
+    ListOrderReq {
+        // Page
+        Page  uint64 `json:"page"`
+
+        // PageSize
+        PageSize  uint64 `json:"pageSize"`
+
+        // Status
+        Status  *uint32 `json:"status,optional"`
+
+        // Type
+        Type  *string `json:"type,optional"`
+
+        // Code
+        Code  *string `json:"code,optional"`
+
+        // Num
+        Num  *float64 `json:"num,optional"`
+
+        // ToAddress
+        ToAddress  *string `json:"toAddress,optional"`
+
+        // FromAddress
+        FromAddress  *string `json:"fromAddress,optional"`
+
+    }
+
+    // ListBannerResp
+    ListOrderResp {
+        BaseDataInfo
+
+        // Data
+        Data  ListOrderInfo `json:"data"`
+
+    }
+
+    ListOrderInfo {
+        BaseListInfo
+
+        Data  []OrderInfo  `json:"data"`
+    }
+
+)
+
+@server(
+    group: order
+)
+
+service Wolflamp {
+    // createOrder
+    @handler createOrder
+    post /order/create (CreateOrderReq) returns (BaseMsgResp)
+
+    // updateOrder
+    @handler updateOrder
+    post /order/update (UpdateOrderReq) returns (BaseMsgResp)
+
+    // deleteOrder
+    @handler deleteOrder
+    post /order/delete (DeleteOrderReq) returns (BaseMsgResp)
+
+    // findOrder
+    @handler findOrder
+    post /order/find (FindOrderReq) returns (OrderInfo)
+
+    // listOrder
+    @handler listOrder
+    post /order/list (ListOrderReq) returns (ListOrderResp)
+
+
+}

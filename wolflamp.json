@@ -1,0 +1,2219 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "Description: wolflamp service",
+    "title": "wolflamp",
+    "version": "0.0.1"
+  },
+  "host": "localhost:8002",
+  "basePath": "/",
+  "paths": {
+    "/banner/create_banner": {
+      "post": {
+        "description": "createBanner",
+        "tags": [
+          "banner"
+        ],
+        "summary": "createBanner",
+        "operationId": "CreateBanner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/CreateBannerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/banner/delete_banner": {
+      "post": {
+        "description": "deleteBanner",
+        "tags": [
+          "banner"
+        ],
+        "summary": "deleteBanner",
+        "operationId": "DeleteBanner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/DeleteBannerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/banner/find_banner": {
+      "post": {
+        "description": "findBanner",
+        "tags": [
+          "banner"
+        ],
+        "summary": "findBanner",
+        "operationId": "FindBanner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/FindBannerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "FindBannerResp",
+            "schema": {
+              "$ref": "#/definitions/FindBannerResp"
+            }
+          }
+        }
+      }
+    },
+    "/banner/list_banner": {
+      "post": {
+        "description": "listBanner",
+        "tags": [
+          "banner"
+        ],
+        "summary": "listBanner",
+        "operationId": "ListBanner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/ListBannerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ListBannerResp",
+            "schema": {
+              "$ref": "#/definitions/ListBannerResp"
+            }
+          }
+        }
+      }
+    },
+    "/banner/update_banner": {
+      "post": {
+        "description": "updateBanner",
+        "tags": [
+          "banner"
+        ],
+        "summary": "updateBanner",
+        "operationId": "UpdateBanner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/UpdateBannerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/init/database": {
+      "get": {
+        "description": "Initialize database | 初始化数据库",
+        "tags": [
+          "base"
+        ],
+        "summary": "Initialize database | 初始化数据库",
+        "operationId": "InitDatabase",
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/notice/find": {
+      "post": {
+        "description": "find",
+        "tags": [
+          "notice"
+        ],
+        "summary": "find",
+        "operationId": "FindNotice",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/FindNoticeReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "FindNoticeResp",
+            "schema": {
+              "$ref": "#/definitions/FindNoticeResp"
+            }
+          }
+        }
+      }
+    },
+    "/notice/update": {
+      "post": {
+        "description": "update",
+        "tags": [
+          "notice"
+        ],
+        "summary": "update",
+        "operationId": "UpdateNotice",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/UpdateNoticeReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/order/create_order": {
+      "post": {
+        "description": "createOrder",
+        "tags": [
+          "order"
+        ],
+        "summary": "createOrder",
+        "operationId": "CreateOrder",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/CreateOrderReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/order/delete_order": {
+      "post": {
+        "description": "deleteOrder",
+        "tags": [
+          "order"
+        ],
+        "summary": "deleteOrder",
+        "operationId": "DeleteOrder",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/DeleteOrderReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/order/find_order": {
+      "post": {
+        "description": "findOrder",
+        "tags": [
+          "order"
+        ],
+        "summary": "findOrder",
+        "operationId": "FindOrder",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/FindOrderReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OrderInfo",
+            "schema": {
+              "$ref": "#/definitions/OrderInfo"
+            }
+          }
+        }
+      }
+    },
+    "/order/list_order": {
+      "post": {
+        "description": "listOrder",
+        "tags": [
+          "order"
+        ],
+        "summary": "listOrder",
+        "operationId": "ListOrder",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/ListOrderReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ListOrderResp",
+            "schema": {
+              "$ref": "#/definitions/ListOrderResp"
+            }
+          }
+        }
+      }
+    },
+    "/order/update_order": {
+      "post": {
+        "description": "updateOrder",
+        "tags": [
+          "order"
+        ],
+        "summary": "updateOrder",
+        "operationId": "UpdateOrder",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/UpdateOrderReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/player/create_player": {
+      "post": {
+        "description": "createPlayer",
+        "tags": [
+          "player"
+        ],
+        "summary": "createPlayer",
+        "operationId": "CreatePlayer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/CreatePlayerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/player/delete_player": {
+      "post": {
+        "description": "deletePlayer",
+        "tags": [
+          "player"
+        ],
+        "summary": "deletePlayer",
+        "operationId": "DeletePlayer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/DeletePlayerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/player/find_player": {
+      "post": {
+        "description": "findPlayer",
+        "tags": [
+          "player"
+        ],
+        "summary": "findPlayer",
+        "operationId": "FindPlayer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/FindPlayerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "PlayerInfo",
+            "schema": {
+              "$ref": "#/definitions/PlayerInfo"
+            }
+          }
+        }
+      }
+    },
+    "/player/list_player": {
+      "post": {
+        "description": "listPlayer",
+        "tags": [
+          "player"
+        ],
+        "summary": "listPlayer",
+        "operationId": "ListPlayer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/ListPlayerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ListPlayerResp",
+            "schema": {
+              "$ref": "#/definitions/ListPlayerResp"
+            }
+          }
+        }
+      }
+    },
+    "/player/update_player": {
+      "post": {
+        "description": "updatePlayer",
+        "tags": [
+          "player"
+        ],
+        "summary": "updatePlayer",
+        "operationId": "UpdatePlayer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/UpdatePlayerReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/setting/find_setting": {
+      "post": {
+        "description": "findSetting",
+        "tags": [
+          "setting"
+        ],
+        "summary": "findSetting",
+        "operationId": "FindSetting",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/FindSettingReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SettingInfo",
+            "schema": {
+              "$ref": "#/definitions/SettingInfo"
+            }
+          }
+        }
+      }
+    },
+    "/setting/update_setting": {
+      "post": {
+        "description": "updateSetting",
+        "tags": [
+          "setting"
+        ],
+        "summary": "updateSetting",
+        "operationId": "UpdateSetting",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/PlatformSetting"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BannerInfo": {
+      "description": "BannerInfo",
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "description": "CreatedAt",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "endpoint": {
+          "description": "Endpoint",
+          "type": "string",
+          "x-go-name": "Endpoint"
+        },
+        "file": {
+          "$ref": "#/definitions/FileInfo"
+        },
+        "fileType": {
+          "description": "FileType",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "FileType"
+        },
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        },
+        "jumpUrl": {
+          "description": "JumpUrl",
+          "type": "string",
+          "x-go-name": "JumpUrl"
+        },
+        "module": {
+          "description": "Module",
+          "type": "string",
+          "x-go-name": "Module"
+        },
+        "path": {
+          "description": "Path",
+          "type": "string",
+          "x-go-name": "Path"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "updatedAt": {
+          "description": "UpdatedAt",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseDataInfo": {
+      "description": "The basic response with data | 基础带数据信息",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseIDInfo": {
+      "description": "The base ID response data | 基础ID信息",
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "description": "Create date | 创建日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        },
+        "updatedAt": {
+          "description": "Update date | 更新日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseIDInt32Info": {
+      "description": "The base ID response data (int32) | 基础ID信息 (int32)",
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "description": "Create date | 创建日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "int32",
+          "x-go-name": "Id"
+        },
+        "updatedAt": {
+          "description": "Update date | 更新日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseIDInt64Info": {
+      "description": "The base ID response data (int64) | 基础ID信息 (int64)",
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "description": "Create date | 创建日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Id"
+        },
+        "updatedAt": {
+          "description": "Update date | 更新日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseIDUint32Info": {
+      "description": "The base ID response data (uint32) | 基础ID信息 (uint32)",
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "description": "Create date | 创建日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Id"
+        },
+        "updatedAt": {
+          "description": "Update date | 更新日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseListInfo": {
+      "description": "The basic response with data | 基础带数据信息",
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data"
+        },
+        "total": {
+          "description": "The total number of data | 数据总数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Total"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseMsgResp": {
+      "description": "The basic response without data | 基础不带数据信息",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "BaseUUIDInfo": {
+      "description": "The base UUID response data | 基础UUID信息",
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "description": "Create date | 创建日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "id": {
+          "description": "ID",
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "updatedAt": {
+          "description": "Update date | 更新日期",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "CreateBannerReq": {
+      "description": "CreateBannerReq",
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "description": "Endpoint",
+          "type": "string",
+          "x-go-name": "Endpoint"
+        },
+        "fileId": {
+          "description": "FileId",
+          "type": "string",
+          "x-go-name": "FileId"
+        },
+        "fileType": {
+          "description": "FileType",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "FileType"
+        },
+        "jumpUrl": {
+          "description": "JumpUrl",
+          "type": "string",
+          "x-go-name": "JumpUrl"
+        },
+        "module": {
+          "description": "Module",
+          "type": "string",
+          "x-go-name": "Module"
+        },
+        "path": {
+          "description": "Path",
+          "type": "string",
+          "x-go-name": "Path"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "CreateOrderReq": {
+      "description": "CreateOrderReq",
+      "type": "object",
+      "properties": {
+        "fromAddress": {
+          "description": "FromAddress",
+          "type": "string",
+          "x-go-name": "FromAddress"
+        },
+        "num": {
+          "description": "Num",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Num"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "toAddress": {
+          "description": "ToAddress",
+          "type": "string",
+          "x-go-name": "ToAddress"
+        },
+        "type": {
+          "description": "Type",
+          "type": "string",
+          "x-go-name": "Type"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "CreatePlayerReq": {
+      "description": "CreatePlayerReq",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "Amount",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Amount"
+        },
+        "invitedCode": {
+          "description": "InvitedCode",
+          "type": "string",
+          "x-go-name": "InvitedCode"
+        },
+        "invitedNum": {
+          "description": "InvitedNum",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "InvitedNum"
+        },
+        "name": {
+          "description": "Name",
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "profitAndLoss": {
+          "description": "ProfitAndLoss",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "ProfitAndLoss"
+        },
+        "rank": {
+          "description": "Rank",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Rank"
+        },
+        "recent100WinPercent": {
+          "description": "Recent100WinPercent",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "Recent100WinPercent"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "totalIncome": {
+          "description": "TotalIncome",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "TotalIncome"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "DeleteBannerReq": {
+      "description": "DeleteBannerReq",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "DeleteOrderReq": {
+      "description": "DeleteOrderReq",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "DeletePlayerReq": {
+      "description": "DeletePlayerReq",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FileInfo": {
+      "type": "object",
+      "properties": {
+        "fileType": {
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "FileType"
+        },
+        "id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "path": {
+          "type": "string",
+          "x-go-name": "Path"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindBannerReq": {
+      "description": "FindBannerReq",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindBannerResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "$ref": "#/definitions/BannerInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindNoticeReq": {
+      "description": "FindNoticeReq",
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "x-go-name": "Module"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindNoticeResp": {
+      "description": "FindNoticeResp",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindOrderReq": {
+      "description": "FindOrderReq",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindOrderResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data",
+          "$ref": "#/definitions/OrderInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindPlayerReq": {
+      "description": "FindPlayerReq",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindPlayerResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "$ref": "#/definitions/PlayerInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindSettingReq": {
+      "description": "FindSettingReq",
+      "type": "object",
+      "properties": {
+        "module": {
+          "type": "string",
+          "x-go-name": "Module"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "FindSettingResp": {
+      "description": "FindSettingResp",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "$ref": "#/definitions/SettingInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "GameRuleInfo": {
+      "description": "GameRuleInfo",
+      "type": "object",
+      "properties": {
+        "content": {
+          "description": "Content",
+          "type": "string",
+          "x-go-name": "Content"
+        },
+        "title": {
+          "description": "Title",
+          "type": "string",
+          "x-go-name": "Title"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDInt32PathReq": {
+      "description": "Basic ID request (int32) | 基础ID地址参数请求 (int32)",
+      "type": "object",
+      "required": [
+        "Id"
+      ],
+      "properties": {
+        "Id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDInt32Req": {
+      "description": "Basic ID request (int32) | 基础ID参数请求 (int32)",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "int32",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDInt64PathReq": {
+      "description": "Basic ID request (int64) | 基础ID地址参数请求 (int64)",
+      "type": "object",
+      "required": [
+        "Id"
+      ],
+      "properties": {
+        "Id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDInt64Req": {
+      "description": "Basic ID request (int64) | 基础ID参数请求 (int64)",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDPathReq": {
+      "description": "Basic ID request | 基础ID地址参数请求",
+      "type": "object",
+      "required": [
+        "Id"
+      ],
+      "properties": {
+        "Id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "uint64"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDReq": {
+      "description": "Basic ID request | 基础ID参数请求",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDUint32PathReq": {
+      "description": "Basic ID request (uint32) | 基础ID地址参数请求 (uint32)",
+      "type": "object",
+      "required": [
+        "Id"
+      ],
+      "properties": {
+        "Id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "uint32"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDUint32Req": {
+      "description": "Basic ID request (uint32) | 基础ID参数请求 (uint32)",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "description": "ID",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDsInt32Req": {
+      "description": "Basic IDs request (int32) | 基础ID数组参数请求 (int32)",
+      "type": "object",
+      "required": [
+        "ids"
+      ],
+      "properties": {
+        "ids": {
+          "description": "IDs",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "x-go-name": "Ids"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDsInt64Req": {
+      "description": "Basic IDs request (int64) | 基础ID数组参数请求 (int64)",
+      "type": "object",
+      "required": [
+        "ids"
+      ],
+      "properties": {
+        "ids": {
+          "description": "IDs",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "x-go-name": "Ids"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDsReq": {
+      "description": "Basic IDs request | 基础ID数组参数请求",
+      "type": "object",
+      "required": [
+        "ids"
+      ],
+      "properties": {
+        "ids": {
+          "description": "IDs",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint64"
+          },
+          "x-go-name": "Ids"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "IDsUint32Req": {
+      "description": "Basic IDs request (uint32) | 基础ID数组参数请求 (uint32)",
+      "type": "object",
+      "required": [
+        "ids"
+      ],
+      "properties": {
+        "ids": {
+          "description": "IDs",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint32"
+          },
+          "x-go-name": "Ids"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListBannerInfo": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "Data | 数据",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BannerInfo"
+          },
+          "x-go-name": "Data"
+        },
+        "total": {
+          "description": "The total number of data | 数据总数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Total"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListBannerReq": {
+      "description": "ListBannerReq",
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "description": "Endpoint",
+          "type": "string",
+          "x-go-name": "Endpoint"
+        },
+        "fileType": {
+          "description": "FileType",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "FileType"
+        },
+        "jumpUrl": {
+          "description": "JumpUrl",
+          "type": "string",
+          "x-go-name": "JumpUrl"
+        },
+        "module": {
+          "description": "Module",
+          "type": "string",
+          "x-go-name": "Module"
+        },
+        "page": {
+          "description": "Page",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Page"
+        },
+        "pageSize": {
+          "description": "PageSize",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "PageSize"
+        },
+        "path": {
+          "description": "Path",
+          "type": "string",
+          "x-go-name": "Path"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListBannerResp": {
+      "description": "ListBannerResp",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data",
+          "$ref": "#/definitions/ListBannerInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListOrderInfo": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "Data | 数据",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderInfo"
+          },
+          "x-go-name": "Data"
+        },
+        "total": {
+          "description": "The total number of data | 数据总数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Total"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListOrderReq": {
+      "description": "ListOrderReq",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Code",
+          "type": "string",
+          "x-go-name": "Code"
+        },
+        "fromAddress": {
+          "description": "FromAddress",
+          "type": "string",
+          "x-go-name": "FromAddress"
+        },
+        "num": {
+          "description": "Num",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Num"
+        },
+        "page": {
+          "description": "Page",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Page"
+        },
+        "pageSize": {
+          "description": "PageSize",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "PageSize"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "toAddress": {
+          "description": "ToAddress",
+          "type": "string",
+          "x-go-name": "ToAddress"
+        },
+        "type": {
+          "description": "Type",
+          "type": "string",
+          "x-go-name": "Type"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListOrderResp": {
+      "description": "ListBannerResp",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data",
+          "$ref": "#/definitions/ListOrderInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListPlayerInfo": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "Data | 数据",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlayerInfo"
+          },
+          "x-go-name": "Data"
+        },
+        "total": {
+          "description": "The total number of data | 数据总数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Total"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListPlayerReq": {
+      "description": "ListPlayerReq",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "Amount",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Amount"
+        },
+        "inviteCode": {
+          "description": "InviteCode",
+          "type": "string",
+          "x-go-name": "InviteCode"
+        },
+        "invitedCode": {
+          "description": "InvitedCode",
+          "type": "string",
+          "x-go-name": "InvitedCode"
+        },
+        "invitedNum": {
+          "description": "InvitedNum",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "InvitedNum"
+        },
+        "name": {
+          "description": "Name",
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "page": {
+          "description": "Page",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Page"
+        },
+        "pageSize": {
+          "description": "PageSize",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "PageSize"
+        },
+        "profitAndLoss": {
+          "description": "ProfitAndLoss",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "ProfitAndLoss"
+        },
+        "rank": {
+          "description": "Rank",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Rank"
+        },
+        "recent100WinPercent": {
+          "description": "Recent100WinPercent",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "Recent100WinPercent"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "totalIncome": {
+          "description": "TotalIncome",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "TotalIncome"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "ListPlayerResp": {
+      "description": "ListBannerResp",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data",
+          "$ref": "#/definitions/ListPlayerInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "OrderInfo": {
+      "description": "OrderInfo",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Code",
+          "type": "string",
+          "x-go-name": "Code"
+        },
+        "createdAt": {
+          "description": "CreatedAt",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "fromAddress": {
+          "description": "FromAddress",
+          "type": "string",
+          "x-go-name": "FromAddress"
+        },
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        },
+        "num": {
+          "description": "Num",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Num"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "toAddress": {
+          "description": "ToAddress",
+          "type": "string",
+          "x-go-name": "ToAddress"
+        },
+        "transactionId": {
+          "description": "TransactionId",
+          "type": "string",
+          "x-go-name": "TransactionId"
+        },
+        "type": {
+          "description": "Type",
+          "type": "string",
+          "x-go-name": "Type"
+        },
+        "updatedAt": {
+          "description": "UpdatedAt",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "PageInfo": {
+      "description": "The page request parameters | 列表请求参数",
+      "type": "object",
+      "required": [
+        "page",
+        "pageSize"
+      ],
+      "properties": {
+        "page": {
+          "description": "Page number | 第几页",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0,
+          "x-go-name": "Page"
+        },
+        "pageSize": {
+          "description": "Page size | 单页数据行数",
+          "type": "integer",
+          "format": "uint64",
+          "maximum": 100000,
+          "x-go-name": "PageSize"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "PlayerInfo": {
+      "description": "PlayerInfo",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "Amount",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Amount"
+        },
+        "createdAt": {
+          "description": "CreatedAt",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreatedAt"
+        },
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        },
+        "inviteCode": {
+          "description": "InviteCode",
+          "type": "string",
+          "x-go-name": "InviteCode"
+        },
+        "invitedCode": {
+          "description": "InvitedCode",
+          "type": "string",
+          "x-go-name": "InvitedCode"
+        },
+        "invitedNum": {
+          "description": "InvitedNum",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "InvitedNum"
+        },
+        "inviterId": {
+          "description": "InviterId",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "InviterId"
+        },
+        "name": {
+          "description": "Name",
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "profitAndLoss": {
+          "description": "ProfitAndLoss",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "ProfitAndLoss"
+        },
+        "rank": {
+          "description": "Rank",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Rank"
+        },
+        "recent100WinPercent": {
+          "description": "Recent100WinPercent",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "Recent100WinPercent"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "totalIncome": {
+          "description": "TotalIncome",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "TotalIncome"
+        },
+        "updatedAt": {
+          "description": "UpdatedAt",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "RobotLampNumInfo": {
+      "description": "RobotLampNumInfo",
+      "type": "object",
+      "properties": {
+        "max": {
+          "description": "Max",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Max"
+        },
+        "min": {
+          "description": "Min",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Min"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "RobotNumInfo": {
+      "description": "RobotNumInfo",
+      "type": "object",
+      "properties": {
+        "max": {
+          "description": "Max",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Max"
+        },
+        "min": {
+          "description": "Min",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Min"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "SettingInfo": {
+      "description": "SettingInfo",
+      "type": "object",
+      "properties": {
+        "gameRule": {
+          "$ref": "#/definitions/GameRuleInfo"
+        },
+        "idleTime": {
+          "description": "IdleTime | 机器人空闲秒数",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "IdleTime"
+        },
+        "minWithdrawNum": {
+          "description": "MinWithdrawNum | 最小提现数量",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "MinWithdrawNum"
+        },
+        "platformWallet": {
+          "description": "PlatformWalletPrivateKey | 平台钱包",
+          "type": "string",
+          "x-go-name": "PlatformWalletPrivateKey"
+        },
+        "robotLampNum": {
+          "$ref": "#/definitions/RobotLampNumInfo"
+        },
+        "robotNum": {
+          "$ref": "#/definitions/RobotNumInfo"
+        },
+        "withdrawCommission": {
+          "description": "WithdrawCommission | 提现手续费",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "WithdrawCommission"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UUIDPathReq": {
+      "description": "Basic UUID request in path | 基础UUID地址参数请求",
+      "type": "object",
+      "required": [
+        "Id"
+      ],
+      "properties": {
+        "Id": {
+          "description": "ID",
+          "type": "string"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UUIDReq": {
+      "description": "Basic UUID request | 基础UUID参数请求",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "description": "ID",
+          "type": "string",
+          "maxLength": 36,
+          "minLength": 36,
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UUIDsReq": {
+      "description": "Basic UUID array request | 基础UUID数组参数请求",
+      "type": "object",
+      "required": [
+        "ids"
+      ],
+      "properties": {
+        "ids": {
+          "description": "Ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Ids"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UpdateBannerReq": {
+      "description": "UpdateBannerReq",
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "description": "Endpoint",
+          "type": "string",
+          "x-go-name": "Endpoint"
+        },
+        "fileId": {
+          "description": "FileId",
+          "type": "string",
+          "x-go-name": "FileId"
+        },
+        "fileType": {
+          "description": "FileType",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "FileType"
+        },
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        },
+        "jumpUrl": {
+          "description": "JumpUrl",
+          "type": "string",
+          "x-go-name": "JumpUrl"
+        },
+        "module": {
+          "description": "Module",
+          "type": "string",
+          "x-go-name": "Module"
+        },
+        "path": {
+          "description": "Path",
+          "type": "string",
+          "x-go-name": "Path"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UpdateNoticeReq": {
+      "description": "UpdateNoticeReq",
+      "type": "object",
+      "properties": {
+        "notice": {
+          "type": "string",
+          "x-go-name": "Notice"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UpdateOrderReq": {
+      "description": "UpdateOrderReq",
+      "type": "object",
+      "properties": {
+        "fromAddress": {
+          "description": "FromAddress",
+          "type": "string",
+          "x-go-name": "FromAddress"
+        },
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        },
+        "num": {
+          "description": "Num",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Num"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "toAddress": {
+          "description": "ToAddress",
+          "type": "string",
+          "x-go-name": "ToAddress"
+        },
+        "transactionId": {
+          "description": "TransactionId",
+          "type": "string",
+          "x-go-name": "TransactionId"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UpdatePlayerReq": {
+      "description": "UpdatePlayerReq",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "Amount",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "Amount"
+        },
+        "id": {
+          "description": "Id",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Id"
+        },
+        "invitedNum": {
+          "description": "InvitedNum",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "InvitedNum"
+        },
+        "name": {
+          "description": "Name",
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "profitAndLoss": {
+          "description": "ProfitAndLoss",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "ProfitAndLoss"
+        },
+        "rank": {
+          "description": "Rank",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Rank"
+        },
+        "recent100WinPercent": {
+          "description": "Recent100WinPercent",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "Recent100WinPercent"
+        },
+        "status": {
+          "description": "Status",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "Status"
+        },
+        "totalIncome": {
+          "description": "TotalIncome",
+          "type": "number",
+          "format": "double",
+          "x-go-name": "TotalIncome"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "UpdateSettingReq": {
+      "description": "UpdateSettingReq",
+      "type": "object",
+      "properties": {
+        "gameRule": {
+          "$ref": "#/definitions/GameRuleInfo"
+        },
+        "idleTime": {
+          "description": "IdleTime | 机器人空闲秒数",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "IdleTime"
+        },
+        "minWithdrawNum": {
+          "description": "MinWithdrawNum | 最小提现数量",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "MinWithdrawNum"
+        },
+        "platformWallet": {
+          "description": "PlatformWalletPrivateKey | 平台钱包",
+          "type": "string",
+          "x-go-name": "PlatformWalletPrivateKey"
+        },
+        "robotLampNum": {
+          "$ref": "#/definitions/RobotLampNumInfo"
+        },
+        "robotNum": {
+          "$ref": "#/definitions/RobotNumInfo"
+        },
+        "withdrawCommission": {
+          "description": "WithdrawCommission | 提现手续费",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "WithdrawCommission"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    }
+  },
+  "securityDefinitions": {
+    "Token": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}
