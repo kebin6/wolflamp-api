@@ -27,10 +27,14 @@ func (l *UpdatePlayerLogic) UpdatePlayer(req *types.UpdatePlayerReq) (resp *type
 
 	data, err := l.svcCtx.WolfLampRpc.UpdatePlayer(l.ctx,
 		&wolflamp.UpdatePlayerReq{
-			Id:     req.Id,
-			Status: req.Status,
-			Rank:   req.Rank,
-			Amount: req.Amount,
+			Id:               req.Id,
+			Status:           &req.Status,
+			Rank:             &req.Rank,
+			Amount:           &req.Amount,
+			Lamp:             &req.Lamb,
+			DepositAddress:   &req.DepositAddress,
+			SystemCommission: &req.SystemCommission,
+			Email:            &req.Email,
 		})
 	if err != nil {
 		return nil, err

@@ -32,10 +32,14 @@ func (l *CreatePlayerLogic) CreatePlayer(req *types.CreatePlayerReq) (resp *type
 	}
 	data, err := l.svcCtx.WolfLampRpc.CreatePlayer(l.ctx,
 		&wolflamp.CreatePlayerReq{
-			Status:      req.Status,
-			Rank:        req.Rank,
-			Amount:      req.Amount,
-			InvitedCode: req.InvitedCode,
+			Status:           req.Status,
+			Rank:             req.Rank,
+			Amount:           req.Amount,
+			InvitedCode:      req.InvitedCode,
+			SystemCommission: req.SystemCommission,
+			Lamp:             req.Lamb,
+			DepositAddress:   req.DepositAddress,
+			Email:            req.Email,
 		})
 	if err != nil {
 		return nil, err

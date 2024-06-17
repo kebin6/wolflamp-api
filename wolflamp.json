@@ -901,6 +901,16 @@
           "format": "double",
           "x-go-name": "Amount"
         },
+        "depositAddress": {
+          "description": "web3钱包地址",
+          "type": "string",
+          "x-go-name": "DepositAddress"
+        },
+        "email": {
+          "description": "邮箱",
+          "type": "string",
+          "x-go-name": "Email"
+        },
         "invitedCode": {
           "description": "InvitedCode",
           "type": "string",
@@ -912,16 +922,11 @@
           "format": "uint32",
           "x-go-name": "InvitedNum"
         },
-        "name": {
-          "description": "Name",
-          "type": "string",
-          "x-go-name": "Name"
-        },
-        "profitAndLoss": {
-          "description": "ProfitAndLoss",
+        "lamb": {
+          "description": "剩余羊数量",
           "type": "number",
           "format": "float",
-          "x-go-name": "ProfitAndLoss"
+          "x-go-name": "Lamb"
         },
         "rank": {
           "description": "Rank",
@@ -929,23 +934,17 @@
           "format": "uint32",
           "x-go-name": "Rank"
         },
-        "recent100WinPercent": {
-          "description": "Recent100WinPercent",
-          "type": "number",
-          "format": "float",
-          "x-go-name": "Recent100WinPercent"
-        },
         "status": {
           "description": "Status",
           "type": "integer",
           "format": "uint32",
           "x-go-name": "Status"
         },
-        "totalIncome": {
-          "description": "TotalIncome",
+        "systemCommission": {
+          "description": "平台奖励比例（%）",
           "type": "number",
-          "format": "double",
-          "x-go-name": "TotalIncome"
+          "format": "float",
+          "x-go-name": "SystemCommission"
         }
       },
       "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
@@ -1611,11 +1610,10 @@
       "description": "ListPlayerReq",
       "type": "object",
       "properties": {
-        "amount": {
-          "description": "Amount",
-          "type": "number",
-          "format": "double",
-          "x-go-name": "Amount"
+        "email": {
+          "description": "邮箱",
+          "type": "string",
+          "x-go-name": "Email"
         },
         "inviteCode": {
           "description": "InviteCode",
@@ -1626,17 +1624,6 @@
           "description": "InvitedCode",
           "type": "string",
           "x-go-name": "InvitedCode"
-        },
-        "invitedNum": {
-          "description": "InvitedNum",
-          "type": "integer",
-          "format": "uint32",
-          "x-go-name": "InvitedNum"
-        },
-        "name": {
-          "description": "Name",
-          "type": "string",
-          "x-go-name": "Name"
         },
         "page": {
           "description": "Page",
@@ -1650,35 +1637,17 @@
           "format": "uint64",
           "x-go-name": "PageSize"
         },
-        "profitAndLoss": {
-          "description": "ProfitAndLoss",
-          "type": "number",
-          "format": "float",
-          "x-go-name": "ProfitAndLoss"
-        },
         "rank": {
           "description": "Rank",
           "type": "integer",
           "format": "uint32",
           "x-go-name": "Rank"
         },
-        "recent100WinPercent": {
-          "description": "Recent100WinPercent",
-          "type": "number",
-          "format": "float",
-          "x-go-name": "Recent100WinPercent"
-        },
         "status": {
           "description": "Status",
           "type": "integer",
           "format": "uint32",
           "x-go-name": "Status"
-        },
-        "totalIncome": {
-          "description": "TotalIncome",
-          "type": "number",
-          "format": "double",
-          "x-go-name": "TotalIncome"
         }
       },
       "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
@@ -1799,7 +1768,7 @@
       "type": "object",
       "properties": {
         "amount": {
-          "description": "Amount",
+          "description": "余币数量",
           "type": "number",
           "format": "double",
           "x-go-name": "Amount"
@@ -1810,6 +1779,16 @@
           "format": "int64",
           "x-go-name": "CreatedAt"
         },
+        "depositAddress": {
+          "description": "web3钱包地址",
+          "type": "string",
+          "x-go-name": "DepositAddress"
+        },
+        "email": {
+          "description": "邮箱",
+          "type": "string",
+          "x-go-name": "Email"
+        },
         "id": {
           "description": "Id",
           "type": "integer",
@@ -1817,46 +1796,41 @@
           "x-go-name": "Id"
         },
         "inviteCode": {
-          "description": "InviteCode",
+          "description": "邀请码",
           "type": "string",
           "x-go-name": "InviteCode"
         },
         "invitedCode": {
-          "description": "InvitedCode",
+          "description": "邀请人邀请码",
           "type": "string",
           "x-go-name": "InvitedCode"
         },
         "invitedNum": {
-          "description": "InvitedNum",
+          "description": "邀请好友数量",
           "type": "integer",
           "format": "uint32",
           "x-go-name": "InvitedNum"
         },
         "inviterId": {
-          "description": "InviterId",
+          "description": "邀请人ID",
           "type": "integer",
           "format": "uint64",
           "x-go-name": "InviterId"
         },
-        "name": {
-          "description": "Name",
-          "type": "string",
-          "x-go-name": "Name"
-        },
-        "profitAndLoss": {
-          "description": "ProfitAndLoss",
+        "lamb": {
+          "description": "剩余羊数量",
           "type": "number",
           "format": "float",
-          "x-go-name": "ProfitAndLoss"
+          "x-go-name": "Lamb"
         },
         "rank": {
-          "description": "Rank",
+          "description": "代理等级",
           "type": "integer",
           "format": "uint32",
           "x-go-name": "Rank"
         },
         "recent100WinPercent": {
-          "description": "Recent100WinPercent",
+          "description": "近100局胜率",
           "type": "number",
           "format": "float",
           "x-go-name": "Recent100WinPercent"
@@ -1867,8 +1841,14 @@
           "format": "uint32",
           "x-go-name": "Status"
         },
+        "systemCommission": {
+          "description": "平台奖励比例（%）",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "SystemCommission"
+        },
         "totalIncome": {
-          "description": "TotalIncome",
+          "description": "累计奖励",
           "type": "number",
           "format": "double",
           "x-go-name": "TotalIncome"
@@ -1938,11 +1918,6 @@
           "type": "integer",
           "format": "uint32",
           "x-go-name": "MinWithdrawNum"
-        },
-        "platformWallet": {
-          "description": "PlatformWalletPrivateKey | 平台钱包",
-          "type": "string",
-          "x-go-name": "PlatformWalletPrivateKey"
         },
         "robotLampNum": {
           "$ref": "#/definitions/RobotLampNumInfo"
@@ -2119,11 +2094,26 @@
           "format": "double",
           "x-go-name": "Amount"
         },
+        "depositAddress": {
+          "description": "web3钱包地址",
+          "type": "string",
+          "x-go-name": "DepositAddress"
+        },
+        "email": {
+          "description": "邮箱",
+          "type": "string",
+          "x-go-name": "Email"
+        },
         "id": {
           "description": "Id",
           "type": "integer",
           "format": "uint64",
           "x-go-name": "Id"
+        },
+        "invitedCode": {
+          "description": "InvitedCode",
+          "type": "string",
+          "x-go-name": "InvitedCode"
         },
         "invitedNum": {
           "description": "InvitedNum",
@@ -2131,16 +2121,11 @@
           "format": "uint32",
           "x-go-name": "InvitedNum"
         },
-        "name": {
-          "description": "Name",
-          "type": "string",
-          "x-go-name": "Name"
-        },
-        "profitAndLoss": {
-          "description": "ProfitAndLoss",
+        "lamb": {
+          "description": "剩余羊数量",
           "type": "number",
           "format": "float",
-          "x-go-name": "ProfitAndLoss"
+          "x-go-name": "Lamb"
         },
         "rank": {
           "description": "Rank",
@@ -2148,23 +2133,17 @@
           "format": "uint32",
           "x-go-name": "Rank"
         },
-        "recent100WinPercent": {
-          "description": "Recent100WinPercent",
-          "type": "number",
-          "format": "float",
-          "x-go-name": "Recent100WinPercent"
-        },
         "status": {
           "description": "Status",
           "type": "integer",
           "format": "uint32",
           "x-go-name": "Status"
         },
-        "totalIncome": {
-          "description": "TotalIncome",
+        "systemCommission": {
+          "description": "平台奖励比例（%）",
           "type": "number",
-          "format": "double",
-          "x-go-name": "TotalIncome"
+          "format": "float",
+          "x-go-name": "SystemCommission"
         }
       },
       "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
@@ -2187,11 +2166,6 @@
           "type": "integer",
           "format": "uint32",
           "x-go-name": "MinWithdrawNum"
-        },
-        "platformWallet": {
-          "description": "PlatformWalletPrivateKey | 平台钱包",
-          "type": "string",
-          "x-go-name": "PlatformWalletPrivateKey"
         },
         "robotLampNum": {
           "$ref": "#/definitions/RobotLampNumInfo"

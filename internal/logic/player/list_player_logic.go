@@ -31,9 +31,9 @@ func (l *ListPlayerLogic) ListPlayer(req *types.ListPlayerReq) (resp *types.List
 			Page:        req.Page,
 			PageSize:    req.PageSize,
 			Status:      req.Status,
-			Name:        req.Name,
 			InviteCode:  req.InviteCode,
 			InvitedCode: req.InvitedCode,
+			Email:       req.Email,
 		})
 	if err != nil {
 		return nil, err
@@ -42,14 +42,9 @@ func (l *ListPlayerLogic) ListPlayer(req *types.ListPlayerReq) (resp *types.List
 	resp.Msg = l.svcCtx.Trans.Trans(l.ctx, i18n.Success)
 	resp.Data.Total = data.GetTotal()
 
+	findLogic := NewFindPlayerLogic(l.ctx, l.svcCtx)
 	for _, v := range data.Data {
-		resp.Data.Data = append(resp.Data.Data,
-			types.PlayerInfo{
-				Id:        v.Id,
-				CreatedAt: v.CreatedAt,
-				UpdatedAt: v.UpdatedAt,
-				Status:    v.Status,
-			})
+		resp.Data.Data = append(resp.Data.Data, findLogic.Po2Vo(v))
 	}
 	return resp, nil
 

@@ -17,35 +17,41 @@ type (
         // Status
         Status  uint32 `json:"status"`
 
-        // Name
-        Name  string `json:"name"`
-
-        // Rank
+        // 代理等级
         Rank  uint32 `json:"rank"`
 
-        // Amount
+        // 余币数量
         Amount  float64 `json:"amount"`
 
-        // InvitedNum
+        // 邀请好友数量
         InvitedNum  uint32 `json:"invitedNum"`
 
-        // TotalIncome
+        // 累计奖励
         TotalIncome  float64 `json:"totalIncome"`
 
-        // ProfitAndLoss
-        ProfitAndLoss  float32 `json:"profitAndLoss"`
-
-        // Recent100WinPercent
+        // 近100局胜率
         Recent100WinPercent  float32 `json:"recent100WinPercent"`
 
-        // InviteCode
+        // 邀请码
         InviteCode  string `json:"inviteCode"`
 
-        // InviterId
+        // 邀请人ID
         InviterId  uint64 `json:"inviterId"`
 
-        // InvitedCode
+        // 邀请人邀请码
         InvitedCode  string `json:"invitedCode"`
+
+        // 剩余羊数量
+        Lamb  float32 `json:"lamb"`
+
+        // web3钱包地址
+        DepositAddress  string `json:"depositAddress"`
+
+        // 平台奖励比例（%）
+        SystemCommission  float32 `json:"systemCommission"`
+
+        // 邮箱
+        Email  string `json:"email"`
     }
 
     // CreatePlayerReq 
@@ -53,29 +59,29 @@ type (
         // Status
         Status  uint32 `json:"status"`
 
-        // Name
-        Name  string `json:"name"`
-
         // Rank
         Rank  uint32 `json:"rank"`
 
         // Amount
         Amount  float64 `json:"amount"`
 
+        // 剩余羊数量
+        Lamb  float32 `json:"lamb"`
+
         // InvitedNum
         InvitedNum  uint32 `json:"invitedNum"`
 
-        // TotalIncome
-        TotalIncome  float64 `json:"totalIncome"`
-
-        // ProfitAndLoss
-        ProfitAndLoss  float32 `json:"profitAndLoss"`
-
-        // Recent100WinPercent
-        Recent100WinPercent  float32 `json:"recent100WinPercent"`
-
         // InvitedCode
         InvitedCode  string `json:"invitedCode"`
+
+        // 平台奖励比例（%）
+        SystemCommission  float32 `json:"systemCommission"`
+
+        // web3钱包地址
+        DepositAddress  string `json:"depositAddress"`
+
+        // 邮箱
+        Email  string `json:"email"`
     }
 
     // UpdatePlayerReq 
@@ -84,28 +90,31 @@ type (
         Id  uint64 `json:"id"`
 
         // Status
-        Status  *uint32 `json:"status,optional"`
-
-        // Name
-        Name  *string `json:"name,optional"`
+        Status  uint32 `json:"status,optional"`
 
         // Rank
-        Rank  *uint32 `json:"rank,optional"`
+        Rank  uint32 `json:"rank,optional"`
 
         // Amount
-        Amount  *float64 `json:"amount,optional"`
+        Amount  float64 `json:"amount,optional"`
+
+        // 剩余羊数量
+        Lamb  float32 `json:"lamb"`
 
         // InvitedNum
-        InvitedNum  *uint32 `json:"invitedNum,optional"`
+        InvitedNum  uint32 `json:"invitedNum,optional"`
 
-        // TotalIncome
-        TotalIncome  *float64 `json:"totalIncome,optional"`
+        // InvitedCode
+        InvitedCode  string `json:"invitedCode,optional"`
 
-        // ProfitAndLoss
-        ProfitAndLoss  *float32 `json:"profitAndLoss,optional"`
+        // 平台奖励比例（%）
+        SystemCommission  float32 `json:"systemCommission,optional"`
 
-        // Recent100WinPercent
-        Recent100WinPercent  *float32 `json:"recent100WinPercent,optional"`
+        // web3钱包地址
+        DepositAddress  string `json:"depositAddress,optional"`
+
+        // 邮箱
+        Email  string `json:"email,optional"`
     }
 
     // DeletePlayerReq 
@@ -137,32 +146,17 @@ type (
         // Status
         Status  *uint32 `json:"status,optional"`
 
-        // Name
-        Name  *string `json:"name,optional"`
-
         // Rank
         Rank  *uint32 `json:"rank,optional"`
-
-        // Amount
-        Amount  *float64 `json:"amount,optional"`
-
-        // InvitedNum
-        InvitedNum  *uint32 `json:"invitedNum,optional"`
-
-        // TotalIncome
-        TotalIncome  *float64 `json:"totalIncome,optional"`
-
-        // ProfitAndLoss
-        ProfitAndLoss  *float32 `json:"profitAndLoss,optional"`
-
-        // Recent100WinPercent
-        Recent100WinPercent  *float32 `json:"recent100WinPercent,optional"`
 
         // InviteCode
         InviteCode  *string `json:"inviteCode,optional"`
 
         // InvitedCode
         InvitedCode  *string `json:"invitedCode,optional"`
+
+        // 邮箱
+        Email  *string `json:"email,optional"`
     }
 
     // ListBannerResp

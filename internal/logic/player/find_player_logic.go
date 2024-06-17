@@ -36,21 +36,29 @@ func (l *FindPlayerLogic) FindPlayer(req *types.FindPlayerReq) (resp *types.Find
 	}
 
 	return &types.FindPlayerResp{
-		Data: types.PlayerInfo{
-			Id:                  data.Id,
-			CreatedAt:           data.CreatedAt,
-			UpdatedAt:           data.UpdatedAt,
-			Status:              data.Status,
-			Rank:                data.Rank,
-			Amount:              data.Amount,
-			InvitedCode:         data.InvitedCode,
-			Name:                data.Name,
-			InvitedNum:          data.InvitedNum,
-			TotalIncome:         data.TotalIncome,
-			ProfitAndLoss:       data.ProfitAndLoss,
-			Recent100WinPercent: data.Recent_100WinPercent,
-			InviteCode:          data.InviteCode,
-		},
+		Data: l.Po2Vo(data),
 	}, nil
+
+}
+
+func (l *FindPlayerLogic) Po2Vo(po *wolflamp.PlayerInfo) (vo types.PlayerInfo) {
+
+	return types.PlayerInfo{
+		Id:                  po.Id,
+		CreatedAt:           po.CreatedAt,
+		UpdatedAt:           po.UpdatedAt,
+		Status:              po.Status,
+		Rank:                po.Rank,
+		Amount:              po.Amount,
+		InvitedCode:         po.InvitedCode,
+		InvitedNum:          po.InvitedNum,
+		TotalIncome:         po.TotalIncome,
+		Recent100WinPercent: po.Recent_100WinPercent,
+		InviteCode:          po.InviteCode,
+		Lamb:                po.Lamp,
+		SystemCommission:    po.SystemCommission,
+		Email:               po.Email,
+		DepositAddress:      po.DepositAddress,
+	}
 
 }
