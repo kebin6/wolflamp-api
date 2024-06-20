@@ -8,6 +8,7 @@ import (
 	base "github.com/kebin6/wolflamp-api/internal/handler/base"
 	notice "github.com/kebin6/wolflamp-api/internal/handler/notice"
 	order "github.com/kebin6/wolflamp-api/internal/handler/order"
+	overview "github.com/kebin6/wolflamp-api/internal/handler/overview"
 	player "github.com/kebin6/wolflamp-api/internal/handler/player"
 	setting "github.com/kebin6/wolflamp-api/internal/handler/setting"
 	"github.com/kebin6/wolflamp-api/internal/svc"
@@ -142,6 +143,16 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Method:  http.MethodPost,
 				Path:    "/order/list",
 				Handler: order.ListOrderHandler(serverCtx),
+			},
+		},
+	)
+
+	server.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodPost,
+				Path:    "/overview",
+				Handler: overview.GetOverviewHandler(serverCtx),
 			},
 		},
 	)

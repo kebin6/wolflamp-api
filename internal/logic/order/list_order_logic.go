@@ -2,6 +2,7 @@ package order
 
 import (
 	"context"
+	"github.com/kebin6/wolflamp-rpc/common/enum/orderenum"
 	"github.com/kebin6/wolflamp-rpc/types/wolflamp"
 	"github.com/suyuan32/simple-admin-common/i18n"
 
@@ -43,9 +44,11 @@ func (l *ListOrderLogic) ListOrder(req *types.ListOrderReq) (resp *types.ListOrd
 		resp.Data.Data = append(resp.Data.Data,
 			types.OrderInfo{
 				Id:          v.Id,
+				Code:        v.Code,
 				CreatedAt:   v.CreatedAt,
 				UpdatedAt:   v.UpdatedAt,
 				Status:      v.Status,
+				StatusDesc:  orderenum.NewOrderStatus(v.Status).Desc(),
 				Type:        v.Type,
 				Num:         v.Num,
 				ToAddress:   v.ToAddress,

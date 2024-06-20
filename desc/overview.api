@@ -1,0 +1,143 @@
+syntax = "v1"
+
+import "base.api"
+
+type (
+
+    // 统揽数据
+    OverviewInfo struct {
+        // 今日参与游戏玩家数
+        TodayParticipateCount uint64 `json:"todayParticipateCount"`
+        // 今日新增游戏玩家数
+        TodayNewPlayerCount uint64 `json:"todayNewPlayerCount"`
+        // 今日游戏开局次数
+        TodayRoundCount uint64 `json:"todayRoundCount"`
+        // 今日累积吃羊数
+        TodayEatCount uint64 `json:"todayEatCount"`
+        // 今日平台收益
+        TodayPlatformProfit uint64 `json:"todayPlatformProfit"`
+        // 平台累积收益（可按月查询明细）
+        TotalPlatformProfit uint64 `json:"totalPlatformProfit"`
+        // 平台累积人数
+        TotalPlayerCount uint64 `json:"totalPlayerCount"`
+    }
+
+    // 获取总揽数据请求体
+    GetOverviewReq struct {
+        StartTime *int64 `json:"startTime,optional"`
+        EndTime *int64 `json:"endTime,optional"`
+    }
+
+    // 获取总揽数据响应体
+    GetOverviewResp struct {
+        BaseDataInfo
+        Data OverviewInfo `json:"data"`
+    }
+//    // 获取参与游戏玩家数请求体
+//    GetParticipatePlayerCountReq struct {
+//        StartAt int64 `json:"start_at,optional"`
+//        EndAt int64 `json:"end_at,optional"`
+//    }
+//
+//    // 获取参与游戏玩家数响应体
+//    GetParticipatePlayerCountResp struct {
+//        BaseDataInfo
+//        Data int64 `json:"data"`
+//    }
+//
+//    // 获取新增游戏玩家数请求体
+//    GetNewPlayerCountReq struct {
+//        StartAt int64 `json:"start_at,optional"`
+//        EndAt int64 `json:"end_at,optional"`
+//    }
+//
+//    // 获取新增游戏玩家数响应体
+//    GetNewPlayerCountResp struct {
+//        BaseDataInfo
+//        Data int64 `json:"data"`
+//    }
+//
+//    // 获取游戏开局次数请求体
+//    GetGameStartCountReq struct {
+//        StartAt int64 `json:"start_at,optional"`
+//        EndAt int64 `json:"end_at,optional"`
+//    }
+//
+//    // 获取游戏开局次数响应体
+//    GetGameStartCountResp struct {
+//        BaseDataInfo
+//        Data int64 `json:"data"`
+//    }
+//
+//    // 获取累积吃羊数请求体
+//    GetEatSheepCountReq struct {
+//        StartAt int64 `json:"start_at,optional"`
+//        EndAt int64 `json:"end_at,optional"`
+//    }
+//
+//    // 获取累积吃羊数响应体
+//    GetEatSheepCountResp struct {
+//        BaseDataInfo
+//        Data int64 `json:"data"`
+//    }
+//
+//    // 获取平台收益请求体
+//    GetPlatformProfitReq struct {
+//        StartAt int64 `json:"start_at,optional"`
+//        EndAt int64 `json:"end_at,optional"`
+//    }
+//
+//    // 获取平台收益响应体
+//    GetPlatformProfitResp struct {
+//        BaseDataInfo
+//        Data int64 `json:"data"`
+//    }
+//
+//    // 平台累积人数请求体
+//    GetPlatformPlayerCountReq struct {
+//        StartAt int64 `json:"start_at,optional"`
+//        EndAt int64 `json:"end_at,optional"`
+//    }
+//
+//    // 平台累积人数响应体
+//    GetPlatformPlayerCountResp struct {
+//        BaseDataInfo
+//        Data int64 `json:"data"`
+//    }
+)
+
+@server(
+    group: overview
+)
+
+service Wolflamp {
+
+    // 获取总揽数据
+    @handler getOverview
+    post /overview (GetOverviewReq) returns (GetOverviewResp)
+
+//    // 获取参与游戏玩家数
+//    @handler getParticipatePlayerCount
+//    post /overview/participate_player_count (GetParticipatePlayerCountReq) returns (GetParticipatePlayerCountResp)
+//
+//    // 获取新增游戏玩家数
+//    @handler getNewPlayerCount
+//    post /overview/new_player_count (GetNewPlayerCountReq) returns (GetNewPlayerCountResp)
+//
+//    // 获取游戏开局次数
+//    @handler getGameStartCount
+//    post /overview/game_start_count (GetGameStartCountReq) returns (GetGameStartCountResp)
+//
+//    // 获取累积吃羊数
+//    @handler getEatSheepCount
+//    post /overview/eat_sheep_count (GetEatSheepCountReq) returns (GetEatSheepCountResp)
+//
+//    // 获取平台收益
+//    @handler getPlatformProfit
+//    post /overview/platform_profit (GetPlatformProfitReq) returns (GetPlatformProfitResp)
+//
+//    // 获取平台累积人数
+//    @handler getPlatformPlayerCount
+//    post /overview/platform_player_count (GetPlatformPlayerCountReq) returns (GetPlatformPlayerCountResp)
+
+}

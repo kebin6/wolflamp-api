@@ -3,6 +3,7 @@ package setting
 import (
 	"context"
 	"encoding/json"
+	"github.com/kebin6/wolflamp-rpc/common/enum"
 	"github.com/kebin6/wolflamp-rpc/types/wolflamp"
 
 	"github.com/kebin6/wolflamp-api/internal/svc"
@@ -32,7 +33,7 @@ func (l *UpdateSettingLogic) UpdateSetting(req *types.UpdateSettingReq) (resp *t
 	}
 	data, err := l.svcCtx.WolfLampRpc.UpdateSetting(l.ctx,
 		&wolflamp.UpdateSettingReq{
-			Module:     "platform_setting",
+			Module:     enum.PlatformSetting.Val(),
 			JsonString: string(jsonString),
 		})
 	if err != nil {

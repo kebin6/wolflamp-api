@@ -372,6 +372,34 @@
         }
       }
     },
+    "/overview": {
+      "post": {
+        "description": "获取总揽数据",
+        "tags": [
+          "overview"
+        ],
+        "summary": "获取总揽数据",
+        "operationId": "GetOverview",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/GetOverviewReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GetOverviewResp",
+            "schema": {
+              "$ref": "#/definitions/GetOverviewResp"
+            }
+          }
+        }
+      }
+    },
     "/player/create_player": {
       "post": {
         "description": "createPlayer",
@@ -1196,6 +1224,47 @@
       },
       "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
     },
+    "GetOverviewReq": {
+      "description": "获取总揽数据请求体",
+      "type": "object",
+      "properties": {
+        "endTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "EndTime"
+        },
+        "startTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "StartTime"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "GetOverviewResp": {
+      "description": "获取总揽数据响应体",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data",
+          "$ref": "#/definitions/OverviewInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
     "IDInt32PathReq": {
       "description": "Basic ID request (int32) | 基础ID地址参数请求 (int32)",
       "type": "object",
@@ -1714,6 +1783,11 @@
           "format": "uint32",
           "x-go-name": "Status"
         },
+        "statusDesc": {
+          "description": "StatusDesc",
+          "type": "string",
+          "x-go-name": "StatusDesc"
+        },
         "toAddress": {
           "description": "ToAddress",
           "type": "string",
@@ -1734,6 +1808,55 @@
           "type": "integer",
           "format": "int64",
           "x-go-name": "UpdatedAt"
+        }
+      },
+      "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
+    },
+    "OverviewInfo": {
+      "description": "统揽数据",
+      "type": "object",
+      "properties": {
+        "todayEatCount": {
+          "description": "今日累积吃羊数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "TodayEatCount"
+        },
+        "todayNewPlayerCount": {
+          "description": "今日新增游戏玩家数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "TodayNewPlayerCount"
+        },
+        "todayParticipateCount": {
+          "description": "今日参与游戏玩家数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "TodayParticipateCount"
+        },
+        "todayPlatformProfit": {
+          "description": "今日平台收益",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "TodayPlatformProfit"
+        },
+        "todayRoundCount": {
+          "description": "今日游戏开局次数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "TodayRoundCount"
+        },
+        "totalPlatformProfit": {
+          "description": "平台累积收益（可按月查询明细）",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "TotalPlatformProfit"
+        },
+        "totalPlayerCount": {
+          "description": "平台累积人数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "TotalPlayerCount"
         }
       },
       "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
@@ -1904,6 +2027,12 @@
       "description": "SettingInfo",
       "type": "object",
       "properties": {
+        "gameCommission": {
+          "description": "GameCommission | 系统抽佣",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "GameCommission"
+        },
         "gameRule": {
           "$ref": "#/definitions/GameRuleInfo"
         },
@@ -1930,6 +2059,12 @@
           "type": "number",
           "format": "float",
           "x-go-name": "WithdrawCommission"
+        },
+        "withdrawThreshold": {
+          "description": "WithdrawThreshold | 提现免审额度",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "WithdrawThreshold"
         }
       },
       "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"
@@ -2152,6 +2287,12 @@
       "description": "UpdateSettingReq",
       "type": "object",
       "properties": {
+        "gameCommission": {
+          "description": "GameCommission | 系统抽佣",
+          "type": "number",
+          "format": "float",
+          "x-go-name": "GameCommission"
+        },
         "gameRule": {
           "$ref": "#/definitions/GameRuleInfo"
         },
@@ -2178,6 +2319,12 @@
           "type": "number",
           "format": "float",
           "x-go-name": "WithdrawCommission"
+        },
+        "withdrawThreshold": {
+          "description": "WithdrawThreshold | 提现免审额度",
+          "type": "integer",
+          "format": "uint32",
+          "x-go-name": "WithdrawThreshold"
         }
       },
       "x-go-package": "github.com/kebin6/wolflamp-api/internal/types"

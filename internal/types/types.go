@@ -270,6 +270,10 @@ type SettingInfo struct {
 	MinWithdrawNum uint32 `json:"minWithdrawNum"`
 	// IdleTime | 机器人空闲秒数
 	IdleTime uint32 `json:"idleTime"`
+	// GameCommission | 系统抽佣
+	GameCommission float32 `json:"gameCommission"`
+	// WithdrawThreshold | 提现免审额度
+	WithdrawThreshold uint32 `json:"withdrawThreshold"`
 }
 
 // FindSettingReq
@@ -580,6 +584,8 @@ type OrderInfo struct {
 	UpdatedAt int64 `json:"updatedAt"`
 	// Status
 	Status uint32 `json:"status"`
+	// StatusDesc
+	StatusDesc string `json:"statusDesc"`
 	// Type
 	Type string `json:"type"`
 	// Code
@@ -680,4 +686,37 @@ type ListOrderResp struct {
 type ListOrderInfo struct {
 	BaseListInfo
 	Data []OrderInfo `json:"data"`
+}
+
+// 统揽数据
+// swagger:model OverviewInfo
+type OverviewInfo struct {
+	// 今日参与游戏玩家数
+	TodayParticipateCount uint64 `json:"todayParticipateCount"`
+	// 今日新增游戏玩家数
+	TodayNewPlayerCount uint64 `json:"todayNewPlayerCount"`
+	// 今日游戏开局次数
+	TodayRoundCount uint64 `json:"todayRoundCount"`
+	// 今日累积吃羊数
+	TodayEatCount uint64 `json:"todayEatCount"`
+	// 今日平台收益
+	TodayPlatformProfit uint64 `json:"todayPlatformProfit"`
+	// 平台累积收益（可按月查询明细）
+	TotalPlatformProfit uint64 `json:"totalPlatformProfit"`
+	// 平台累积人数
+	TotalPlayerCount uint64 `json:"totalPlayerCount"`
+}
+
+// 获取总揽数据请求体
+// swagger:model GetOverviewReq
+type GetOverviewReq struct {
+	StartTime *int64 `json:"startTime,optional"`
+	EndTime   *int64 `json:"endTime,optional"`
+}
+
+// 获取总揽数据响应体
+// swagger:model GetOverviewResp
+type GetOverviewResp struct {
+	BaseDataInfo
+	Data OverviewInfo `json:"data"`
 }

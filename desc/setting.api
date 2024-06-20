@@ -40,6 +40,10 @@ type (
         MinWithdrawNum uint32 `json:"minWithdrawNum"`
         // IdleTime | 机器人空闲秒数
         IdleTime uint32 `json:"idleTime"`
+        // GameCommission | 系统抽佣
+        GameCommission float32 `json:"gameCommission"`
+        // WithdrawThreshold | 提现免审额度
+        WithdrawThreshold uint32 `json:"withdrawThreshold"`
     }
 
     // FindSettingReq 

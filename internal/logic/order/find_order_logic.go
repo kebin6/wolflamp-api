@@ -2,6 +2,7 @@ package order
 
 import (
 	"context"
+	"github.com/kebin6/wolflamp-rpc/common/enum/orderenum"
 	"github.com/kebin6/wolflamp-rpc/types/wolflamp"
 	"github.com/suyuan32/simple-admin-common/i18n"
 	"github.com/zeromicro/go-zero/core/errorx"
@@ -38,7 +39,9 @@ func (l *FindOrderLogic) FindOrder(req *types.FindOrderReq) (resp *types.FindOrd
 	return &types.FindOrderResp{
 		Data: types.OrderInfo{
 			Id:            data.Id,
+			Code:          data.Code,
 			Status:        data.Status,
+			StatusDesc:    orderenum.NewOrderStatus(data.Status).Desc(),
 			CreatedAt:     data.CreatedAt,
 			UpdatedAt:     data.UpdatedAt,
 			Type:          data.Type,

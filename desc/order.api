@@ -16,6 +16,9 @@ type (
         // Status
         Status  uint32 `json:"status"`
 
+        // StatusDesc
+        StatusDesc  string `json:"statusDesc"`
+
         // Type
         Type  string `json:"type"`
 
